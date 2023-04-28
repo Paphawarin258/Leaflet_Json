@@ -1,0 +1,267 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My leaflet map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+ integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+ crossorigin="" />
+ 
+ <!-- W3 CSS template -->
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+ 
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+ <style>
+ #mapid {
+ height: 800px;
+ }
+ </style>
+</head>
+<body>
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>ชื่อสถานที่ท่องเที่ยว</th>
+        <th>ประเภท</th>
+        <th>ระดับ</th>
+        </tr>
+        <tr>
+        <td>น้ำตก A</td>
+        <td>ธรรมชาติ</td>
+        <td>A</td>
+        </tr>
+        </table>
+        </div>
+        </div>
+<script src ="C:\Mean\Grage3-2\GE344\GE344_leaflet(Workspace)\GE344_leaft\mapmytour.geojson"> </script>
+<script>
+var map = L.map("mapid").setView([13.734188414820835 , 100.52846846087306], 13);
+ 
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+ GoogleSat: gsat,
+ };
+
+var mymaptour = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "เอเชียทีค",
+        "ประเภท": "Shopping Street",
+        "ระดับ": 8
+      },
+      "geometry": {
+        "coordinates": [
+          100.50330941836773,
+          13.705218502831869
+        ],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "ไอคอนสยาม",
+        "ประเภท": "Shopping Mall",
+        "ระดับ": 8
+      },
+      "geometry": {
+        "coordinates": [
+          100.5104199260179,
+          13.726737544106527
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "สวนลุมพินี",
+        "ประเภท": "Natural",
+        "ระดับ": 9
+      },
+      "geometry": {
+        "coordinates": [
+          100.54162071053042,
+          13.73108482187368
+        ],
+        "type": "Point"
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "ตลาดน้อย",
+        "ประเภท": "Special",
+        "ระดับ": 10
+      },
+      "geometry": {
+        "coordinates": [
+          100.51350626933896,
+          13.733868310039952
+        ],
+        "type": "Point"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "วัดยานนาวา",
+        "ประเภท": "Culture",
+        "ระดับ": 10
+      },
+      "geometry": {
+        "coordinates": [
+          100.51387686052988,
+          13.717326366454685
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "สามย่านมิตรทาวน์",
+        "ประเภท": "Shopping Mall",
+        "ระดับ": 9
+      },
+      "geometry": {
+        "coordinates": [
+          100.52846846087306,
+          13.734188414820835
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "สวนเบญจกิติ",
+        "ประเภท": "Natural",
+        "ระดับ": 8
+      },
+      "geometry": {
+        "coordinates": [
+          100.5585561130494,
+          13.730592455314294
+        ],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "สยามเซ็นเตอร์",
+        "ประเภท": "Shopping Mall",
+        "ระดับ": 10
+      },
+      "geometry": {
+        "coordinates": [
+          100.53278094471773,
+          13.746250981041854
+        ],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "ท้องฟ้าจำลอง",
+        "ประเภท": "Learning",
+        "ระดับ": 9
+      },
+      "geometry": {
+        "coordinates": [
+          100.58304856038541,
+          13.719921010463324
+        ],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อสถานที่ท่องเที่ยว": "วัดชัยมงคล",
+        "ประเภท": "Culture",
+        "ระดับ": 10
+      },
+      "geometry": {
+        "coordinates": [
+          100.52285576352125,
+          13.7479572968424
+        ],
+        "type": "Point"
+      },
+      "id": 9
+    }
+  ]
+}
+
+//interaction by mouseover
+var tourLayer = L.geoJSON(mymaptour, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.ชื่อสถานที่ท่องเที่ยว);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.ชื่อสถานที่ท่องเที่ยว)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.ชื่อสถานที่ท่องเที่ยว)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+ cont += "<table class='w3-table w3-striped'>";
+ cont += "<tr>";
+ cont += "<th>ชื่อสถานที่ท่องเที่ยว</th>";
+ cont += "<th>ประเภท</th>";
+ cont += "<th>ระดับ</th>";
+ cont += "</tr>";
+ for (let i in mymaptour.features) {
+ cont += "<tr id=" + mymaptour.features[i].properties.ชื่อสถานที่ท่องเที่ยว + ">";
+ cont += "<td>" + mymaptour.features[i].properties.ชื่อสถานที่ท่องเที่ยว + "</td>";
+ cont += "<td>" + mymaptour.features[i].properties.ประเภท + "</td>";
+ cont += "<td>" + mymaptour.features[i].properties.ระดับ + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+ var overlays = {สถานที่ท่องเที่ยว: tourLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+ 
+</script>
+</body>
+</html>
